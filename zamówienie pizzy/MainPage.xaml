@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="zamówienie_pizzy.MainPage">
+
+    <ScrollView>
+        <Grid ColumnSpacing="10" RowSpacing="10" Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <VerticalStackLayout Grid.Row="0" Spacing="10" Margin="20">
+                <Label Text="Rozmiar" FontSize="Medium"/>
+                <VerticalStackLayout RadioButtonGroup.GroupName="Rozmiar" RadioButtonGroup.SelectedValue="{Binding Selected_Size}" >
+                    <RadioButton Content="Mała (28 cm) - 20 zł" Value="20"/>
+                    <RadioButton Content="Średnia (32 cm) - 28zł" Value="28"/>
+                    <RadioButton Content="Duża (45 cm) - 38zł" Value="38"/>    
+                </VerticalStackLayout>
+                
+                <Label Text="Rodzaj ciasta" FontSize="Medium"/>
+                <VerticalStackLayout RadioButtonGroup.GroupName="Rodzaj" RadioButtonGroup.SelectedValue="{Binding Selected_Type}">
+                    <RadioButton Content="Cienkie" Value="0"/>
+                    <RadioButton Content="Grube" Value="0" IsChecked="True"/>
+                    <RadioButton Content="Z serem w brzegu (+5 zł)" Value="5"/>
+                </VerticalStackLayout>
+                <Stepper Minimum="0" Maximum="10" Increment="1" Value="{Binding Ilosc_Osob}"/>
+                <Label Text="{Binding Ilosc_Osob}"/>
+                <TimePicker/>
+                <Button Text="Zamów" Command="{Binding Zamowienie}"/>
+                <Label Text="{Binding Message}"/>
+
+
+
+            </VerticalStackLayout>
+            
+            
+        </Grid>
+    </ScrollView>
+
+</ContentPage>
