@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.Text;
 using System.Windows.Input;
 
-namespace zamówienie_pizzye
+namespace zamówienie_pizzy
 {
     public class Obliczanie_pizzy : INotifyPropertyChanged
     {
